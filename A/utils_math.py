@@ -137,7 +137,7 @@ def modular_vector_reduce(
         - Handles negative values correctly (Python % operator)
     """
     if len(S) != len(moduli):
-        raise ValueError(f"S length {len(S)} != moduli length {len(moduli)}")
+        raise ValueError("S and moduli have different lengths")
     
     if np.any(moduli <= 0):
         raise ValueError(f"All moduli must be > 0, got {moduli}")

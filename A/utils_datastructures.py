@@ -118,9 +118,11 @@ class Gene:
         # Bit length validation (default max: 64 bits)
         max_modulus_bits = 64
         for i, m in enumerate(self.moduli):
-            if m.bit_length() > max_modulus_bits:
+            # Ensure numpy scalars are converted to Python int before calling int methods
+            m_int = int(m)
+            if m_int.bit_length() > max_modulus_bits:
                 raise ValueError(
-                    f"Modulus at index {i} ({m}) exceeds max_modulus_bits ({max_modulus_bits})"
+                    f"Modulus at index {i} ({m_int}) exceeds max_modulus_bits ({max_modulus_bits})"
                 )
         
         # Add creation timestamp if not present

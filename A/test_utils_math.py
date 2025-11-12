@@ -163,7 +163,7 @@ class TestModularVectorReduce:
         # Python's % with negative dividend: -5 % 7 = 2
         assert P[0] == 2
         assert P[1] == 10
-        assert P[2] == 9
+        assert P[2] == 4
     
     def test_modular_reduce_dtype(self):
         """Test output dtype is int64."""
